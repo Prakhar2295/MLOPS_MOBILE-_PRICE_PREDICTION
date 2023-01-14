@@ -7,7 +7,7 @@ def get_data(config_path):
     config = read_yaml(config_path)
 
     remote_data_path = config["data_source"]
-    df = pd.read_csv(remote_data_path, sep=";")
+    df = pd.read_csv(remote_data_path)
 
     artifacts_dir = config["artifacts"]["artifacts_dir"]
     raw_local_dir = config["artifacts"]["raw_local_dir"]
@@ -21,7 +21,7 @@ def get_data(config_path):
 
     print(raw_local_file_path)
 
-    df.to_csv(raw_local_file_path, sep =",", index=False)
+    df.to_csv(raw_local_file_path, sep = ",", index=False)
 
 
 
